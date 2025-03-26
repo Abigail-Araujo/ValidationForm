@@ -110,7 +110,7 @@ phoneInput.addEventListener("input", (event) => {
 passwordInput.addEventListener("input", (event) => {
   passwordValidation = passwordRegex.test(event.target.value);
   validation(event, passwordValidation, passwordInput);
-  if (confirmPasswordInput.value !== "") {
+  if ((confirmPasswordInput.value !== "") || (confirmPasswordInput.value === "" && confirmPasswordValidation === true)) {
     confirmPasswordValidation =
       passwordValidation && passwordInput.value === confirmPasswordInput.value;
     validation(
